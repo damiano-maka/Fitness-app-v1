@@ -1,0 +1,32 @@
+{
+  "allenamenti": [
+    {
+      "id": "Jumpingrope-usr-1",
+      "userId": 1,
+      "allenament": {
+        "name": "Jumping rope",
+        "type": "cardio",
+        "muscle": "quadriceps",
+        "equipment": "body_only",
+        "difficulty": "intermediate",
+        "instructions": "Hold an end of the rope in each hand. Position the rope behind you on the ground. Raise your arms up and turn the rope over your head bringing it down in front of you. When it reaches the ground, jump over it. Find a good turning pace that can be maintained. Different speeds and techniques can be used to introduce variation. Rope jumping is exciting, challenges your coordination, and requires a lot of energy. A 150 lb person will burn about 350 calories jumping rope for 30 minutes, compared to over 450 calories running."
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$qm6xOO/VRE/uyWx3ii/JdOQTcfKIAdM5EsJoQb5Zyozco6ELV6Io2",
+      "username": "test test",
+      "isAdmin": false,
+      "id": 1
+    },
+    {
+      "email": "test@test.it",
+      "password": "$2a$10$0mrvHkBDxTILUtWHxSaQt.2uSM8xm47tHcPlSMkOuXFS7LzCi3y3y",
+      "username": "test2",
+      "isAdmin": false,
+      "id": 2
+    }
+  ]
+}

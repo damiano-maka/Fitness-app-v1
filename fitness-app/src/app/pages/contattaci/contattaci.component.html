@@ -1,0 +1,57 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="container col-11 col-sm-9 col-md-7 col-lg-5 col-xl-4">
+        <div class="mb-3">
+            <label for="email" class="form-label"> Nome Cognome </label>
+            <input
+              type="text" 
+              class="form-control custom-input"
+              id="username"
+              placeholder="Name Lastname"
+              name="username"
+              formControlName="username"
+              [class.error]="contactForm.controls.username.touched && contactForm.controls.username.errors?.['required']"
+            />
+            <span *ngIf="contactForm.controls.username.touched && contactForm.controls.username.errors?.['required']" class="error-message">
+            Il campo nome cognome è obbligatorio
+            </span>
+    </div>
+     <div class="mb-3">
+             <label for="email" class="form-label"> Email </label>
+             <input
+               type="email"
+               class="form-control custom-input"
+               id="email"
+               placeholder="name@example.com"
+               name="email"
+               formControlName="email"
+               [class.error]="contactForm.controls.email.touched && contactForm.controls.email.errors?.['required']"
+             />
+             <span *ngIf="contactForm.controls.email.touched && contactForm.controls.email.errors?.['required']" class="error-message">
+             Il campo email è obbligatorio
+             </span>
+     </div>
+     <div class="mb-3">
+        <label for="text" class="form-label"> Messaggio </label>
+        <div class="input-group">
+            <textarea
+                class="form-control custom-input"
+                id="messaggio"
+                formControlName="messaggio"
+                name="messaggio"
+                [class.error]="contactForm.controls.messaggio.touched && contactForm.controls.messaggio.errors?.['required']"
+                placeholder="Type your message here"
+            ></textarea>
+        </div>
+        <span *ngIf="contactForm.controls.messaggio.touched && contactForm.controls.messaggio.errors?.['required']" class="error-message">
+            Il campo messaggio è obbligatorio
+        </span>
+    </div>
+
+    <div class="d-flex justify-content-center flex-column">
+        <div *ngIf="isEmailSent" class="success-message">
+          Email inviata con successo!
+        </div><br>
+             <button class="btn btn-success">Invia</button>
+     </div>
+   </div>
+   </form>

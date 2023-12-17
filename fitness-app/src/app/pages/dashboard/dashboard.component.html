@@ -1,0 +1,27 @@
+
+  <div class="fluid">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link text-light" (click)="scegliAllenamento('cardio')" [class.active]="exercise === 'cardio'">Cardio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" (click)="scegliAllenamento('powerlifting')" [class.active]="exercise === 'powerlifting'">Powerlifting</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" (click)="scegliAllenamento('strength')" [class.active]="exercise === 'strength'">Strength</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" (click)="scegliAllenamento('stretching')" [class.active]="exercise === 'stretching'">Stretching</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" (click)="scegliAllenamento('strongman')" [class.active]="exercise === 'strongman'">Strongman</a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="d-flex justify-content-center flex-wrap mb-2">
+    <div *ngFor="let allenamento of datiAllenamento" class="m-2 p-2">
+      <app-card-allenamento [allenamento]="allenamento" (addClick)="allenamentoAggiunto($event)"></app-card-allenamento>
+    </div>
+  </div>
+  

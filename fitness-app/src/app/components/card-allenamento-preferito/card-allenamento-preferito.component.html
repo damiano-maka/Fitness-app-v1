@@ -1,0 +1,31 @@
+<div class="p-3 mb-3 bg-body-tertiary rounded-3 primodiv">
+    <div class="container-fluid py-1 bounce-in-top">
+      <h3 class="display-6 fw-bold">{{ a.allenament.name }}</h3>
+      <p class="display-7"><strong>Tipo:</strong> {{ a.allenament.type }}</p>
+      <p class="display-7"><strong>Muscoli coinvolti:</strong> {{ a.allenament.muscle }}</p>
+      <p class="display-7"><strong>Attrezzatura:</strong> {{ a.allenament.equipment }}</p>
+      <p class="col-md-8 fs-6"><strong>Istruzioni:</strong> {{ a.allenament.instructions }}</p>
+      <p class="col-md-8 fs-6"><strong>Difficoltà:</strong> {{ a.allenament.difficulty }}</p>
+      
+      <div *ngIf="a.allenament.difficulty === 'beginner'">
+        <div class="progress mt-1 mb-4" role="progressbar" style="width: 50%" aria-label="Beginner" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-success" style="width: 25%"></div>
+        </div>
+      </div>
+      
+      <div *ngIf="a.allenament.difficulty === 'intermediate'">
+        <div class="progress mt-1 mb-4" role="progressbar" style="width: 50%" aria-label="Intermediate" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-warning" style="width: 50%"></div>
+        </div>
+      </div>
+      
+      <div *ngIf="a.allenament.difficulty === 'expert'">
+        <div class="progress mt-1 mb-4" role="progressbar" style="width: 50%" aria-label="Expert" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-danger" style="width: 75%"></div>
+        </div>
+      </div>
+  
+      <button class="btn btn-danger" type="button" (click)="onAddClickA()">Cancella allenamento</button>
+    </div>
+  </div>
+  

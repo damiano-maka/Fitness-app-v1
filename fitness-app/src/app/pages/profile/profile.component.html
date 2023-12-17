@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row">
+     
+      <div class="col-12 col-md-3  mb-5">
+          <div class="card mx-auto" style="max-width: 250px;">
+              <img class="card-img-top rounded-circle p-5" src="../../../assets/user.png" alt="Profile Image">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Utente: {{ utente.user.username }}</h5>
+                  <p class="card-text">Email: {{ utente.user.email }}</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-12 col-md-9 details-column border-top border-bottom pb-2">
+           <div *ngFor="let item of allenamenti" class="m-2 p-2">
+            <app-card-allenamento-preferito [a]="item" (addClickA)="removeMovieFromFavorites(item)"></app-card-allenamento-preferito> 
+           </div>
+      </div> 
+      
+  </div>
+</div>

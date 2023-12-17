@@ -1,0 +1,36 @@
+<main> 
+  <div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+
+        <nav class="navbar navbar-expand-md navbar-light bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">
+                <div class="elementor-element elementor-element-b4295f4 elementor-widget elementor-widget-image" data-id="b4295f4" data-element_type="widget" data-widget_type="image.default">
+          <div class="elementor-widget-container">
+            <img width="223" height="51" src="https://fitnesswork.net/wp-content/uploads/2023/07/Logo-FitnessWork.svg" draggable=false  class="attachment-large size-large wp-image-1420" alt="">															</div>
+          </div>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center mt-1">
+                  <a class="btn btn-outline-secondary m-1" *ngIf="isNotHomeRoute()" [routerLink]="['/']">Home</a>
+                  <a class="btn btn-outline-secondary m-1"  [routerLink]="['/contattaci']">Contattaci</a>
+                  <a class="btn btn-outline-secondary m-1" *ngIf="!(getAuthService().isLoggedIn$ | async)" [routerLink]="['/login']">Accedi</a>
+                  <ng-container *ngIf="getAuthService().isLoggedIn$ | async as isLoggedIn">
+                    <a class="btn btn-outline-secondary m-1" *ngIf="isLoggedIn" [routerLink]="['/allenamenti']">Allenamenti</a>
+                    <a class="btn btn-outline-secondary m-1" *ngIf="isLoggedIn" [routerLink]="['/profile']">Profile</a>
+                    <a class="btn btn-outline-secondary m-1" *ngIf="isLoggedIn" (click)="logOut()"><i class="fa fa-sign-out" style="font-size:22px;color:rgb(11, 137, 0)"></i></a>
+                  </ng-container>
+                </ul>
+                </div>
+            </div>
+        </nav>
+        </header>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+  </div>
+</main>
+
+  
